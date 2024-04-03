@@ -43,7 +43,13 @@ public class BingoTest {
         for(String fila : filas)
             System.out.println(fila);
 
-
+        int contBCarton = 0;
+        for(int[] col : cartonDirecto) {
+            for(int celda : col) {
+                if(celda == -1) contBCarton++;
+            }
+        }
+        assertThat(contBCarton).isEqualTo(3*4);
 
 
 
