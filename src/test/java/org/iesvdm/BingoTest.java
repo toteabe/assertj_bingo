@@ -11,4 +11,9 @@ public class BingoTest {
         assertThat(1!=1).isTrue();
     }
 
+    @Test
+    void testRamaMaster() {
+
+    }
+
 }
