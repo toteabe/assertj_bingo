@@ -81,8 +81,15 @@ public class BingoTest {
 
             }
     @Test
-    void buscarFila(){
+    void buscarFilaTest() {
 
+        int[][] carton = {{1, 2, 3}, {4, -1, 6}, {7, 8, 9}};
+
+        boolean encontrar = Bingo.buscarFila(carton, 1, 2);
+        assertThat(encontrar).isTrue();
+
+        encontrar = Bingo.buscarFila(carton, 1, 0);
+        assertThat(encontrar).isFalse();
     }
 
     @Test
