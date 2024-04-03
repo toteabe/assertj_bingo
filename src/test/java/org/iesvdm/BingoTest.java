@@ -13,7 +13,7 @@ public class BingoTest {
 
     @Test
     void testRamaMaster() {
-
+        fail("Sin implementar");
     }
 
 }
