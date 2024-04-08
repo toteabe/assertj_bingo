@@ -14,11 +14,43 @@ public class BingoTest {
         assertThat(1==1).isTrue();
     }
     @Test
-    void rellenarNumerosCartonTest1(){
-        //when
-        int[] arrayBi={4};
-        //Do
-        //Then
+    void rellenarNumerosCartonTest() {
+        //WHEN
+        int[] col0 = new int[3];
+        int[] col1 = new int[3];
+        int[] col2 = new int[3];
+        int[] col3 = new int[3];
+        int[] col4 = new int[3];
+        int[] col5 = new int[3];
+        int[] col6 = new int[3];
+        int[] col7 = new int[3];
+        int[] col8 = new int[3];
+
+        int[][] carton = {col0, col1, col2, col3, col4, col5, col6, col7, col8};
+
+        //DO
+        Bingo.rellenarNumerosCarton(carton);
+
+        for (int i = 0; i < carton.length; i++) {
+
+            assertThat(carton[i].length).isEqualTo(3);
+
+            for (int j = 0; j < carton[i].length; j++) {
+                int minimo = 1 + (i * 10);
+                int maximo = minimo + 9;
+                if (i == 0) {
+                    maximo = 9;
+                }
+                assertThat(carton[i][j]).isBetween(minimo, maximo);
+            }
+
+            //THEN
+            int[] ordenCol = Arrays.copyOf(carton[i], carton[i].length);
+            Arrays.sort(ordenCol);
+            for (int j = 0; j < ordenCol.length - 1; j++) {
+                assertThat(ordenCol[j]).isNotEqualTo(ordenCol[j + 1]);
+            }
+        }
     }
 
     @Test
