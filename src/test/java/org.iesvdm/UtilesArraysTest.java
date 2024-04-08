@@ -253,6 +253,7 @@ import org.junit.jupiter.api.Test;
             int[] arrayFinal = UtilesArrays.partirPor(array, posicion1, posicion2);
                 assertThat(arrayFinal).hasSize(0);
         }
+
         @Test
         public void sonIgualesTest1() {
             //When
