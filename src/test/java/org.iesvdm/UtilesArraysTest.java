@@ -279,5 +279,4 @@ import org.junit.jupiter.api.Test;
             //Then
                 assertThat(arrayFinal).containsSequence(4, 7, 9, 6, 5, 8);
         }
-
 }
